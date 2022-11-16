@@ -1,0 +1,31 @@
+#section {
+    display: flex;
+    justify-content: center;
+}
+
+#article {
+    background-color: rgb(255, 223, 167);
+    padding: 10px 50px;
+    border: 10px solid blueviolet;
+    color: rgb(255, 255, 255);
+    margin: 100px 350px;
+}
+
+.sectionFlex {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-shrink: 1;
+
+
+}
+
+img {
+    width: 200px;
+}
+
+.choosePart {
+    text-align: center;
+}
+
+#chooseBox {}
