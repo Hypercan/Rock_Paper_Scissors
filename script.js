@@ -1,31 +1,40 @@
-console.log("hi");
 
-const getUserChoice = (userInput) => {
-    if (
-        userInput === "rock" ||
-        userInput === "paper" ||
-        userInput === "scissors" ||
-        userInput === "bomb"
-    ) {
-        return userInput;
-    } else {
-        console.log("Error!");
-    }
-};
+
+// const getUserChoice = (userInput) => {
+//     if (
+//         userInput === "rock" ||
+//         userInput === "paper" ||
+//         userInput === "scissors" ||
+//         userInput === "bomb"
+//     ) {
+//         return userInput;
+//     } else {
+//         console.log("Error!");
+//     }
+// };
 
 const getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-        case 0:
-            return "rock";
-            break;
-        case 1:
-            return "paper";
-            break;
-        case 2:
-            return "scissors";
-            break;
+    // switch (randomNumber) {
+    //     case 0:
+    //         return "rock";
+    //         break;
+    //     case 1:
+    //         return "paper";
+    //         break;
+    //     case 2:
+    //         return "scissors";
+    //         break;
+    // }
+
+    const computerChoices = {
+        0: "rock",
+        1: "paper",
+        2: "scissors",
     }
+
+    return computerChoices[randomNumber]
+
 };
 
 const determineWinner = (userChoice, computerChoice) => {
@@ -54,11 +63,18 @@ const determineWinner = (userChoice, computerChoice) => {
     }
 };
 
-const playGame = (choice) => {
-    const userChoice = getUserChoice(choice);
+const playGame = (userChoice) => {
     const computerChoice = getComputerChoice();
     console.log(`You threw: ${userChoice}`);
     console.log(`The computer threw: ${computerChoice}`);
     console.log(determineWinner(userChoice, computerChoice));
 };
-playGame("rock");
+
+
+
+window.addEventListener("load", () => {
+    const selectElement = document.querySelector(".ice-cream")
+    selectElement.addEventListener('change', (event) => {
+        playGame(event.target.value);
+    });
+})
